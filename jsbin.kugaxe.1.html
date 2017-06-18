@@ -1,0 +1,44 @@
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2017 by WZoltan (http://jsbin.com/kugaxe/1/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<<!DOCTYPE html>
+<html>
+    <head>
+<meta name="description" content="Canvas Gyakorlat - Szivárvány négyzetek">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>JS Bin</title>
+    </head>
+    <body>
+        <canvas id="myCanvas"  height="340" width="450" style="border: 1px solid black"></canvas>
+    <script id="jsbin-javascript">
+var canvas = document.getElementById('myCanvas');
+var context = canvas.getContext('2d');
+
+var width = canvas.width;
+var height = canvas.height;
+var pozX = 0;
+var pozY = 0;
+var hue = 360;
+
+for(var i=0; i<17 ; i++){
+    context.fillStyle = 'hsla('+ hue +', 50%, 45%, 1)';
+
+context.fillRect(pozX,pozY, width, height);
+    width -=20;
+    height-=20;
+    pozX+=10;
+    pozY+=10;
+    hue -= 360/17;
+}
+context.strokeStyle = 'black';
+context.stroke();
+</script>
+</body>
+</html>
